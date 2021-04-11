@@ -78,6 +78,8 @@ Looking below we can get an idea of how things would influence our data.
 
 ![Tony Noms](img/photo_6.png)
 
+![Tony Awards](img/photo_16.png)
+
 ## 3 Time Series Analysis of Wicked
 
 Wicked was one of the most stable business models in the bunch.  Aside from seasonal spikes and trends, Wicked had high stationarity and a 17 year business model that has proven to be successful.  This made analysing its data and doing loss projections with it easy.
