@@ -89,6 +89,9 @@ Looking above we see a lot of seasonal spikes and dips.  Looking at the red and 
 ![ADFULLER](img/photo_8.png)
 
 The final predictions led to an estimated gross loss for Wicked of: **$100,908,967.00** from March 2020 to March 2021.
+Below is a visualization of the model predictions v.s. real time.  Note the similarity to the rolling mean.  
+
+![tspred](img/photo_15.png)
 
 ## 4 Building Baseline Models
 
