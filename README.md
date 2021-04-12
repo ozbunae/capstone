@@ -61,7 +61,7 @@ This caused problems in the the mahcine learning because these shows run for suc
 
 The idea behind this capstone is to create a model that can be turned into a usable interface for Producers to help them determine when a show should close.  Many times you can look at all of the numbers and go on gut feeling, but a system that would take into account exact differences in the numbers from week to week is ideal.
 
-The idea is that we can demarcate the last 6 weeks of a show's life in order to tell the computer that the show is closing.  The model should take into account all of the other features that are happening to that show during that time and create pattern recognition that allows it to flag new information.
+We can demarcate the last 6 weeks of a show's life in order to tell the computer that the show is closing.  The model should take into account all of the other features that are happening to that show during that time and create pattern recognition that allows it to flag new information.
 
 ![Anastasia closing graph](img/photo_4.png)
 
@@ -99,21 +99,21 @@ Below is a visualization of the model predictions v.s. real time.  Note the simi
 
 ### 4.3 Support Vector Machine
 
-A support vector machine takes data points and outputs the hyperplane (which in two dimensions it's simply a line) that best separates the features. This line is the decision boundary: anything that falls to one side of it we will classify as say, 'blue', and anything that falls to the other as 'red'.
+A support vector machine takes data points and outputs the hyperplane (which in two dimensions it's simply a line) that best separates the features. This line is the decision boundary: anything that falls to one side of it we will classify as say, 'blue', and anything that falls to the other as 'red'.[4]
 
 Support Vector Machine was discarded early on.  The peculiar part of the results for the SVM was that it was very accurate but very accurate at predicting one class.  It constantly wanted to think that every entry was either one class or the other not being able to discern.  The Artificial Neural Network did this as well.
 
 ### 4.1 Logistic Regression
 Unlike Linear Regression Logistic Regression accounts for Categorical variables.
 
-Logistic regression is easier to implement, interpret, and very efficient to train. If the number of observations is lesser than the number of features, Logistic Regression should not be used, otherwise, it may lead to overfitting. It makes no assumptions about distributions of classes in feature space.
+Logistic regression is easier to implement, interpret, and very efficient to train. If the number of observations is lesser than the number of features, Logistic Regression should not be used, otherwise, it may lead to overfitting. It makes no assumptions about distributions of classes in feature space.[1]
 
 Although logistic regression is better than linear regression at dealing with categorical variables, it still is not a great model compared to the other algorithmic models that are in this set of trials.  The logistic regression model was discarded early on.
 
 
 ### 4.2 Random Forest
 
-One way Random Forests reduce variance is by training on different samples of the data. A second way is by using a random subset of features. This means if we have 30 features, random forests will only use a certain number of those features in each model, say five. Unfortunately, we have omitted 25 features that could be useful. But as stated, a random forest is a collection of decision trees. Thus, in each tree we can utilize five random features. If we use many trees in our forest, eventually many or all of our features will have been included. This inclusion of many features will help limit our error due to bias and error due to variance. If features weren’t chosen randomly, base trees in our forest could become highly correlated. This is because a few features could be particularly predictive and thus, the same features would be chosen in many of the base trees. If many of these trees included the same features we would not be combating error due to variance. With that said, random forests are a strong modeling technique and much more robust than a single decision tree. They aggregate many decision trees to limit overfitting as well as error due to bias and therefore yield useful results.
+One way Random Forests reduce variance is by training on different samples of the data. A second way is by using a random subset of features. This means if we have 30 features, random forests will only use a certain number of those features in each model, say five. Unfortunately, we have omitted 25 features that could be useful. But as stated, a random forest is a collection of decision trees. Thus, in each tree we can utilize five random features. If we use many trees in our forest, eventually many or all of our features will have been included. This inclusion of many features will help limit our error due to bias and error due to variance. If features weren’t chosen randomly, base trees in our forest could become highly correlated. This is because a few features could be particularly predictive and thus, the same features would be chosen in many of the base trees. If many of these trees included the same features we would not be combating error due to variance. With that said, random forests are a strong modeling technique and much more robust than a single decision tree. They aggregate many decision trees to limit overfitting as well as error due to bias and therefore yield useful results.[2]
 
 
 ![Random Forest](img/photo_5.png)
@@ -126,7 +126,7 @@ Hyperparameters **max_depth** and **max_leaf_nodes** were adjusted to try to pro
 
 ### 4.4 XG Boost
 
-XGBoost is a popular and efficient open-source implementation of the gradient boosted trees algorithm. When using gradient boosting for regression, the weak learners are regression trees, and each regression tree maps an input data point to one of its leafs that contains a continuous score.
+XGBoost is a popular and efficient open-source implementation of the gradient boosted trees algorithm. When using gradient boosting for regression, the weak learners are regression trees, and each regression tree maps an input data point to one of its leafs that contains a continuous score.[3]
 
 XGBoost Preformed the best out of any model with 95 % accuracy.  Very incredible for predicting when a Broadway show will close.
 
@@ -153,19 +153,19 @@ The confusion matrix for this neural network is also of concern, like the SVM th
 
 
 
-## 7 Final Additions
+## 7 Final Notes
 
 ### 7.1 SMOTE - Class Imbalance
 
 ![ClassIM](img/photo_9.png)
 
-As we can see, the one huge problem with our data set is that our dependant variable is grossly imbalanced.  It makes sense within the context of our data as we hope that shows stay open more often than they close.
+As we can see, the one huge problem with our data set is that our dependant variable is grossly imbalanced.  It makes sense within the context of our data as we hope that shows stay open more often than they close.  
 
 We are going to handle that with SMOTE.
 
 SMOTE stands for Synthetic Minority Oversampling Technique. This is a statistical technique for increasing the number of cases in your dataset in a balanced way. SMOTE takes the entire dataset as an input, but it increases the percentage of only the minority cases.
 
-
+Please note that when SMOTE was used on SVM and neural network it was ineffective.
 
 ### 7.2 Feature Importance
 Feature importance refers to a class of techniques for assigning scores to input features to a predictive model that indicates the relative importance of each feature when making a prediction.
@@ -173,6 +173,10 @@ Feature importance refers to a class of techniques for assigning scores to input
 ![FeatIM](img/photo_3.png)
  
 ## 8 Conclusion
+
+### 8.1 A random walk and a random forest.
+
+As stated a couple of times, even with different features the foundation of our data is time.  Random walk is one of the main theories surrounding time series.  It makes sense that there would be a link between how random walk is devised and random forest. XGBoost is a version of a random forest with gradient boosting ultimately making it the optimal choice.
  
 ![barresults](img/photo_14.png)
  
@@ -187,9 +191,17 @@ Feature importance refers to a class of techniques for assigning scores to input
 
 ### 8.2 Further Work
 
-1. Continue to address class imbalance and overfitting.
+1. Continue to address class imbalance and overfitting.  Augmenting data and features.
 
 2. Look into neural networks as another possibility for training and testing data.
 
 3. Create user interface so that a Producer can interact with this.
+
+## References
+
+[1]https://www.geeksforgeeks.org/advantages-and-disadvantages-of-logistic-regression/
+[2]https://towardsdatascience.com/decision-trees-and-random-forests-df0c3123f991
+[3]https://docs.aws.amazon.com/en_jp/sagemaker/latest/dg/xgboost-HowItWorks.html
+[4]https://www.datacamp.com/community/tutorials/support-vector-machines-r
+
  
