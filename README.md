@@ -173,10 +173,6 @@ Feature importance refers to a class of techniques for assigning scores to input
 ![FeatIM](img/photo_3.png)
  
 ## 8 Conclusion
-
-### 8.1 A random walk and a random forest.
-
-As stated a couple of times, even with different features the foundation of our data is time.  Random walk is one of the main theories surrounding time series.  It makes sense that there would be a link between how random walk is devised and random forest. XGBoost is a version of a random forest with gradient boosting ultimately making it the optimal choice.
  
 ![barresults](img/photo_14.png)
  
