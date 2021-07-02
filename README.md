@@ -137,22 +137,6 @@ Summary of Results is displayed below and at the bottom of the baseline modeling
 ![results](img/photo_11.png)
 
 
-## 6 ANN
-
-How they work: Artificial Neural Network(ANN) uses the processing of the brain as a basis to develop algorithms that can be used to model complex patterns and prediction problems.
-
-In our brain, there are billions of cells called neurons, which processes information in the form of electric signals. External information is received by the dendrites of the neuron, processed in the neuron cell body, converted to an output and passed through the Axon to the next neuron. The next neuron can choose to either accept it or reject it depending on the strength of the signal.[1]
-
-![acc/val](img/photo_12.png)
-
-The positive thing we can say about these results is that they are around 85-88% accurate for training, testing, and validation.  It is concerning however that there is not much learning happening. The validation accuracy being flatlined and the lack of variance in the learning curve for training is evidence of this.
-
-![cm](img/photo_13.png)
-
-The confusion matrix for this neural network is also of concern, like the SVM this model just wants to predict only one class, however it predicts that one class very well.
-
-
-
 ## 7 Final Notes
 
 ### 7.1 SMOTE - Class Imbalance
