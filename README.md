@@ -7,6 +7,7 @@ For organization purposes this project has been broken down into 3 parts as foll
 
 **Baseline Modeling**
 In this section is an in depth Exploratory Data Analysis of Broadway weekly grosses, types of shows, and other important features that may influence whether a show will close or not.  Logistic Regression, SVM, Random Forest, XGBoost are used as baseline modeling techniques while addressing things like class imabalance.  
+*Please see Version 3 for the most up to date version*
 
 **ANN for Broadway Grosses**
 Using the Keras API an Artificial Neural Network is constructed to use sophisticated algorithms to determine if a Broadway show should close or not.
@@ -44,6 +45,14 @@ In addition I added four rows as additional features:
 |Genre|Includes: Mystery, Comedy, Drama, Alternative, Jukebox, Tragedy|
 |Tony Noms|The number of Tony nominations the show recieved.|
 |Tony Awards|The number of Tony awards the show won.|
+
+Four More features were created using feature engineering:
+
+|:----:|:-----:|
+|Gross Difference|The differences in grosses from the week before|
+|Attendence Difference|The difference in attendence from the week before|
+|Theatre Size|Calculated off of attendence and % capacity, approximately the number of seats in the house|
+|Ticket Price|The calculated cost of the average ticket price for that week|
 
 The information for the above rows came from Wikipedia which I usually refrain from using.  However, their sources checked out for features like number of Tony awards, and their tables were the most clean and precise from all of the sources maintaining Tony award information.
 
