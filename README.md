@@ -48,6 +48,7 @@ In addition I added four rows as additional features:
 
 Four More features were created using feature engineering:
 
+|Feature|Description|
 |:----:|:-----:|
 |Gross Difference|The differences in grosses from the week before|
 |Attendence Difference|The difference in attendence from the week before|
